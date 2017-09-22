@@ -10,7 +10,12 @@ _[TODO]_
 
 ## Specs
 
-_[TODO]_
+|                                                 Behavior | Test Input | Expected Output                                                                |
+|---------------------------------------------------------:|------------|--------------------------------------------------------------------------------|
+| It can count up to the given number                      | 5          | [1, 2, 3, 4, 5]                                                                |
+| It can also replace all multiples of 3 with "ping"       | 5          | [1, 2, ping, 4, 5]                                                             |
+| It can also replace all multiples of 5 with "pong"       | 7          | [1, 2, ping, 4, pong, ping, 7]                                                 |
+| It can also replace all multiples of 15 with "ping-pong" | 16         | [1, 2, ping, 4, pong, ping, 7, 8, ping, pong, 11, ping, 13, 14, ping-pong, 16] |
 
 ## Link
 
