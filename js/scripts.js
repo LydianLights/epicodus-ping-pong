@@ -26,12 +26,26 @@ function executePrimePong(countLimit) {
   if (/[^\d]/.test(countLimit) || countLimit < 1) {
     return null;
   }
-  var output = [];
+  var numberList = [];
   for (var i = 1; i <= countLimit; i++) {
-    output.push(i);
+    numberList.push(i);
   }
 
-  return output;
+  // Sieve of Eratosthenes
+  // Set to 0 => composite
+  numberList[0] = 0;
+  for (var i = 0; i < numberList.length; i++) {
+    if (numberList[i] !== 0) {
+      var currentPrime = numberList[i];
+      for (var j = i + 1; j < numberList.length; j++) {
+        if (numberList[j] % currentPrime === 0) {
+          numberList[j] = 0;
+        }
+      }
+    }
+  }
+
+  return numberList;
 }
 
 
