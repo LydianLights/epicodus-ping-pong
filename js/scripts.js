@@ -23,10 +23,8 @@ function pingPong(countLimit) {
 }
 
 
-
-
-// Builds html list to show to user
-function buildDisplayList(list) {
+// Builds output html to display to user using game results
+function buildGameOutput(list) {
   var output = "";
   list.forEach(function(item) {
     output += '<li>' + item + '</li>';
@@ -34,7 +32,27 @@ function buildDisplayList(list) {
   return output;
 }
 
+// Shows the rules for the chosen game and hides all others
+function showGameRules(gameId) {
+  $(".game-description").slideUp();
+  $(gameId).slideDown();
+}
+
 $(document).ready(function() {
+  // Game select buttons
+  $(".game-buttons button[name=ping-pong]").click(function() {
+    showGameRules("#ping-pong-description");
+  })
+  $(".game-buttons button[name=prime-pong]").click(function() {
+    showGameRules("#prime-pong-description");
+  })
+
+
+
+
+
+
+  // Main game execute
   $("#game-control form").submit(function(event) {
     event.preventDefault();
     var countLimit = $("#game-control input[name=count-limit]").val();
@@ -42,7 +60,7 @@ $(document).ready(function() {
 
     $("#game-output ul").empty();
     if (pingPongList !== null) {
-      var output = buildDisplayList(pingPongList);
+      var output = buildGameOutput(pingPongList);
       $("#game-output ul").append(output);
       $("#game-output").show();
     }
