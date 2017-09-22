@@ -66,6 +66,10 @@ body {
   border-top: none;
 }
 
+.game-description h1 {
+  margin-top: 0px;
+}
+
 #game-output-header {
   text-align: center;
 }

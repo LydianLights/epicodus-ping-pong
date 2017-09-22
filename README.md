@@ -64,6 +64,7 @@ _This project is a simple html page with linked css and js files. It makes use o
 ## Known Bugs
 
 * _Button text turns grey when clicked until user clicks something else_
+* _jQuery slideUp/slideDown effect is a little wonky on the game descriptions_
 
 ### License
 

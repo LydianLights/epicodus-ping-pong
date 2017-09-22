@@ -98,6 +98,14 @@ $(document).ready(function() {
         selectedGameMode = modeID;
         showGameRules("#" + modeID + "-description");
       }
+
+      $('html, body').animate({
+        scrollTop: $("#game-settings").offset().top
+      }, 500);
+      $("#game-output").slideUp(500);
+      $("#game-control input[name=count-limit]").removeAttr('disabled');
+      $("#game-control input[name=count-limit]").attr("placeholder", "Enter a number!");
+      $("#game-control button[type=submit]").removeAttr('disabled');
     });
   }
 
