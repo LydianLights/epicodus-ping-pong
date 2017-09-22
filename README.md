@@ -44,7 +44,7 @@ _To experience the game yourself, visit https://lydianlights.github.io/epicodus-
 | It can also replace every 5th prime with "prime pong"       | 17         | [1, prime, prime, 4, prime ping, 6, prime, 8, 9, 10, prime pong, 12, prime ping, 14, 15, 16, prime] |
 | It can also replace every 15th prime with "prime ping-pong" | 49         | [..., 40, prime, 42, prime, 44, 45, 46, prime ping-pong, 48, 49]                                    |
 
-## Prime Pong Mode Specs
+## Pong Ping Mode Specs
 
 _Should behave identically to Ping Pong Mode, but output table in reverse order_
 
