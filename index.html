@@ -17,14 +17,54 @@
       </div> <!-- End header -->
       <div class="page-body">
         <div id="game-settings">
-          <form>
-            <div class="form-group">
-              <input class="form-control" name="count-limit" type="text" placeholder="Enter a number!">
+          <div id="game-select">
+            <h1>How to play:</h1>
+            <p>It's easy, just: </p>
+            <ol>
+              <li>Select a game!</li>
+              <li>Type in a number!</li>
+              <li>Press the button!</li>
+              <li>ENJOY!!</li>
+            </ol>
+            <div class="game-buttons">
+              <button class="btn" type="button" name="ping-pong">Ping Pong</button>
+              <button class="btn" type="button" name="prime-pong">Prime Pong</button>
             </div>
-            <div class="form-group">
-              <button class="btn" type="submit">IT'S TIME TO P-P-P-PING</button>
-            </div>
-          </form>
+          </div>
+
+          <div id="ping-pong-description" class="game-description well">
+            <h1>Ping Pong</h1>
+            <h2>Rules:</h2>
+            <p>Enter a number to count up to:</p>
+            <ul>
+              <li>Numbers divisible by 3 will PING! How exciting!</li>
+              <li>Numbers divisible by 5 will PONG! How daring!</li>
+              <li>Numbers divisible by both 3 and 5 will PING-PONG! How amazing!</li>
+            </ul>
+          </div>
+          <div id="prime-pong-description" class="game-description well">
+            <h1>Prime Pong</h1>
+            <h2>Rules:</h2>
+            <p>Enter a number to count up to:</p>
+            <ul>
+              <li>All prime numbers will PRIME! How expected!</li>
+              <li>Every 3rd prime number will PRIME-PING! How bold!</li>
+              <li>Every 5th prime number will PRIME-PONG! How frightening!</li>
+              <li>Every number that is both an every-3rd-prime and an every-5th-prime will PRIME-PING-PONG! How mathematical!</li>
+            </ul>
+
+          </div>
+
+          <div id="game-control">
+            <form>
+              <div class="form-group">
+                <input class="form-control" name="count-limit" type="text" placeholder="Enter a number!">
+              </div>
+              <div class="form-group">
+                <button class="btn" type="submit">IT'S TIME TO P-P-P-PING</button>
+              </div>
+            </form>
+          </div>
         </div>
 
         <div id="game-output" class="well">

@@ -35,9 +35,9 @@ function buildDisplayList(list) {
 }
 
 $(document).ready(function() {
-  $("#game-settings form").submit(function(event) {
+  $("#game-control form").submit(function(event) {
     event.preventDefault();
-    var countLimit = $("#game-settings input[name=count-limit]").val();
+    var countLimit = $("#game-control input[name=count-limit]").val();
     var pingPongList = pingPong(countLimit);
 
     $("#game-output ul").empty();

@@ -1,3 +1,5 @@
-#game-output {
+#game-output,
+#ping-pong-description,
+#prime-pong-description {
   display: none;
 }
