@@ -83,32 +83,27 @@ function buildGameOutput(list) {
 }
 
 // Shows the rules for the chosen game and hides all others
-function showGameRules(gameId) {
+function showGameRules(gameID) {
   $(".game-description").slideUp();
-  $(gameId).slideDown();
+  $(gameID).slideDown();
 }
 
 $(document).ready(function() {
   // Game select buttons
   var selectedGameMode = "";
-  $(".game-modes-buttons button[name=ping-pong]").click(function() {
-    if (selectedGameMode !== "ping-pong") {
-      selectedGameMode = "ping-pong";
-      showGameRules("#ping-pong-description");
-    }
-  });
-  $(".game-modes-buttons button[name=prime-pong]").click(function() {
-    if (selectedGameMode !== "prime-pong") {
-      selectedGameMode = "prime-pong";
-      showGameRules("#prime-pong-description");
-    }
-  });
-  $(".game-modes-buttons button[name=pong-ping]").click(function() {
-    if (selectedGameMode !== "pong-ping") {
-      selectedGameMode = "pong-ping";
-      showGameRules("#pong-ping-description");
-    }
-  });
+
+  var addGameModeButtonClickEvent = function(modeID) {
+    $(".game-modes-buttons button[name=" + modeID + "]").click(function() {
+      if (selectedGameMode !== modeID) {
+        selectedGameMode = modeID;
+        showGameRules("#" + modeID + "-description");
+      }
+    });
+  }
+
+  addGameModeButtonClickEvent("ping-pong");
+  addGameModeButtonClickEvent("pong-ping");
+  addGameModeButtonClickEvent("prime-pong");
 
   // Main game execute
   $("#game-control form").submit(function(event) {
