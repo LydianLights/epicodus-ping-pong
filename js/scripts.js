@@ -1,6 +1,6 @@
 // Generates Ping Pong game list (as an array) up to given limit
 // Returns null if non-positive-integer is passed in
-function pingPong(countLimit) {
+function executePingPong(countLimit) {
   if (/[^\d]/.test(countLimit) || countLimit < 1) {
     return null;
   }
@@ -20,6 +20,10 @@ function pingPong(countLimit) {
     }
   }
   return output;
+}
+
+function executePrimePong(countLimit) {
+  return [0];
 }
 
 
@@ -58,14 +62,24 @@ $(document).ready(function() {
   $("#game-control form").submit(function(event) {
     event.preventDefault();
     var countLimit = $("#game-control input[name=count-limit]").val();
-    var pingPongList = pingPong(countLimit);
+    var gameResult = null;
 
-    if (pingPongList !== null) {
+    if (selectedGameMode === "ping-pong") {
+      gameResult = executePingPong(countLimit);
+      $("#game-output-header").text("-- Ping Pong Engaged --");
+    }
+    else if (selectedGameMode === "prime-pong") {
+      gameResult = executePrimePong(countLimit);
+      $("#game-output-header").text("-- Prime Pong Engaged --");
+    }
+    else {
+    $("#game-output-header").text("-- Please Select a Game Mode --");
+    }
+
+    if (gameResult !== null) {
       $("#game-output-numbers").empty();
-      $("#game-output-header").text("--Ping Pong Engaged--")
-      var output = buildGameOutput(pingPongList);
-      $("#game-output-numbers").append(output);
-
+      var htmlOutput = buildGameOutput(gameResult);
+      $("#game-output-numbers").append(htmlOutput);
       $("#game-output").show();
       $('html, body').animate({
         scrollTop: $("#game-control").offset().top
