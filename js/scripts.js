@@ -88,24 +88,35 @@ function showGameRules(gameID) {
   $(gameID).slideDown();
 }
 
+// Disallows use of the field where the user inputs their number
+function disableNumberEntry() {
+  $("#game-control input[name=count-limit]").attr("disabled", "disabled");
+  $("#game-control input[name=count-limit]").attr("placeholder", "Enter a number!");
+  $("#game-control button[type=submit]").attr("disabled", "disabled");
+}
+
+// Re-allows use of the field where the user inputs their number
+function enableNumberEntry() {
+  $("#game-control input[name=count-limit]").removeAttr("disabled");
+  $("#game-control input[name=count-limit]").attr("placeholder", "Enter a number!");
+  $("#game-control button[type=submit]").removeAttr("disabled");
+}
+
 $(document).ready(function() {
+  disableNumberEntry();
   // Game select buttons
   var selectedGameMode = "";
-
   var addGameModeButtonClickEvent = function(modeID) {
     $(".game-modes-buttons button[name=" + modeID + "]").click(function() {
       if (selectedGameMode !== modeID) {
         selectedGameMode = modeID;
         showGameRules("#" + modeID + "-description");
       }
-
       $('html, body').animate({
         scrollTop: $("#game-settings").offset().top
       }, 500);
       $("#game-output").slideUp(500);
-      $("#game-control input[name=count-limit]").removeAttr('disabled');
-      $("#game-control input[name=count-limit]").attr("placeholder", "Enter a number!");
-      $("#game-control button[type=submit]").removeAttr('disabled');
+      enableNumberEntry();
     });
   }
 
