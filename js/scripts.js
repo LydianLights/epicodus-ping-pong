@@ -41,13 +41,13 @@ function showGameRules(gameId) {
 $(document).ready(function() {
   // Game select buttons
   var selectedGameMode = "";
-  $(".game-buttons button[name=ping-pong]").click(function() {
+  $(".game-modes-buttons button[name=ping-pong]").click(function() {
     if (selectedGameMode !== "ping-pong") {
       selectedGameMode = "ping-pong";
       showGameRules("#ping-pong-description");
     }
   });
-  $(".game-buttons button[name=prime-pong]").click(function() {
+  $(".game-modes-buttons button[name=prime-pong]").click(function() {
     if (selectedGameMode !== "prime-pong") {
       selectedGameMode = "prime-pong";
       showGameRules("#prime-pong-description");

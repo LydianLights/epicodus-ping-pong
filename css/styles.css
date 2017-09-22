@@ -20,6 +20,29 @@ body {
 
 .well {
   background-color: transparent;
+  border-radius: 6px;
+}
+
+.game-rules {
+  margin-bottom: 50px;
+}
+
+.game-modes {
+  text-align: center;
+}
+
+.game-modes h1 {
+  border-top: 2px solid #fefefe;
+  padding-top: 10px;
+  margin-left: 25%;
+  margin-right: 25%;
+}
+
+.game-modes-buttons {
+  border-top: 1px solid #fefefe;
+  border-bottom: 1px solid #fefefe;
+  padding-top: 15px;
+  padding-bottom: 15px;
 }
 
 .btn-pong {
@@ -30,4 +53,11 @@ body {
 
 .btn-pong:hover {
   background-color: #fefefe;
+}
+
+.game-description {
+  margin-top: 0px;
+  border-top-left-radius: 0px;
+  border-top-right-radius: 0px;
+  border-top: none;
 }
