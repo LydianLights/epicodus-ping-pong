@@ -91,7 +91,7 @@ function showGameRules(gameID) {
 // Disallows use of the field where the user inputs their number
 function disableNumberEntry() {
   $("#game-control input[name=count-limit]").attr("disabled", "disabled");
-  $("#game-control input[name=count-limit]").attr("placeholder", "Enter a number!");
+  $("#game-control input[name=count-limit]").attr("placeholder", "Select a game mode!");
   $("#game-control input[name=count-limit]").val("");
   $("#game-control button[type=submit]").attr("disabled", "disabled");
 }
