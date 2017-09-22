@@ -1,6 +1,5 @@
 #game-output,
-#ping-pong-description,
-#prime-pong-description {
+.game-description {
   display: none;
 }
 

@@ -99,6 +99,12 @@ $(document).ready(function() {
       showGameRules("#prime-pong-description");
     }
   });
+  $(".game-modes-buttons button[name=pong-ping]").click(function() {
+    if (selectedGameMode !== "pong-ping") {
+      selectedGameMode = "pong-ping";
+      showGameRules("#pong-ping-description");
+    }
+  });
 
   // Main game execute
   $("#game-control form").submit(function(event) {
