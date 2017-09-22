@@ -1,12 +1,24 @@
 # _Ping Pong Simulation 20XX_
 
-#### _[TODO]_
+#### _Simulates various forms of [ping pong circulation.](https://www.youtube.com/watch?v=EGqMPFmPWZ8)_
 
 #### By _**Rane Fields**_
 
 ## Description
 
-_[TODO]_
+_This application offers the user the ability to experience several different permutations on the ancient game of Ping-Pong. After selecting a game mode, they simply enter a limiting value specifying the magnitude of Ping-Pongularity they wish to experience and watch the magic unfold._
+
+## Link
+
+_To experience the game yourself, visit https://lydianlights.github.io/epicodus-ping-pong/_
+
+## General Behavior Goals
+
+* _Implement user interface to interact with game_
+* _Implement multiple games the user can choose between_
+  * _Ping Pong Mode_
+  * _Prime Pong Mode_
+  * _Pong Ping Mode_
 
 ## Ping Pong Mode Specs
 
@@ -32,9 +44,9 @@ _[TODO]_
 | It can also replace every 5th prime with "prime pong"       | 17         | [1, prime, prime, 4, prime ping, 6, prime, 8, 9, 10, prime pong, 12, prime ping, 14, 15, 16, prime] |
 | It can also replace every 15th prime with "prime ping-pong" | 49         | [..., 40, prime, 42, prime, 44, 45, 46, prime ping-pong, 48, 49]                                    |
 
-## Link
+## Prime Pong Mode Specs
 
-_[TODO] https://lydianlights.github.io/epicodus-ping-pong/_
+_Should behave identically to Ping Pong Mode, but output table in reverse order_
 
 ## Setup/Installation Requirements
 
@@ -51,7 +63,7 @@ _This project is a simple html page with linked css and js files. It makes use o
 
 ## Known Bugs
 
-* _[TODO]_
+* _Button text turns grey when clicked until user clicks something else_
 
 ### License
 
