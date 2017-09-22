@@ -26,11 +26,9 @@ function pingPong(countLimit) {
 // Builds output html to display to user using game results
 function buildGameOutput(list) {
   var output = "";
-  output += '<ul>';
   list.forEach(function(item) {
-    output += '<li>' + item + '</li>';
+    output += '<div class="output-item well"><p>' + item + '</p></div>';
   });
-  output += '</ul>';
   return output;
 }
 
