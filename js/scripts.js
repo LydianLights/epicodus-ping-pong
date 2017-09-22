@@ -31,7 +31,6 @@ function buildDisplayList(list) {
   list.forEach(function(item) {
     output += '<li>' + item + '</li>';
   });
-  console.log(output);
   return output;
 }
 
