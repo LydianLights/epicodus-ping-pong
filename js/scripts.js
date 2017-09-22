@@ -100,6 +100,7 @@ function disableNumberEntry() {
 function enableNumberEntry() {
   $("#game-control input[name=count-limit]").removeAttr("disabled");
   $("#game-control input[name=count-limit]").attr("placeholder", "Enter a number!");
+  $("#game-control input[name=count-limit]").val("");
   $("#game-control button[type=submit]").removeAttr("disabled");
 }
 
@@ -112,12 +113,12 @@ $(document).ready(function() {
       if (selectedGameMode !== modeID) {
         selectedGameMode = modeID;
         showGameRules("#" + modeID + "-description");
+        enableNumberEntry();
       }
       $('html, body').animate({
         scrollTop: $("#game-settings").offset().top
       }, 500);
       $("#game-output").slideUp(500);
-      enableNumberEntry();
     });
   }
 
