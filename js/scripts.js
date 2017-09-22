@@ -45,12 +45,23 @@ function executePrimePong(countLimit) {
     }
   }
 
+  var primeCounter = 0;
   for (var i = 0; i < output.length; i++) {
     if (output[i] === 0) {
       output[i] = i + 1;
     }
     else {
       output[i] = "prime";
+      primeCounter++;
+      if (primeCounter % 3 === 0 && primeCounter % 5 === 0) {
+        output[i] += " ping-pong"
+      }
+      else if (primeCounter % 3 === 0) {
+        output[i] += " ping";
+      }
+      else if (primeCounter % 5 === 0) {
+        output[i] += " pong";
+      }
     }
   }
 
