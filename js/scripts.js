@@ -22,6 +22,10 @@ function executePingPong(countLimit) {
   return output;
 }
 
+function executePongPing(countLimit) {
+  return executePingPong(countLimit).reverse();
+}
+
 function executePrimePong(countLimit) {
   if (/[^\d]/.test(countLimit) || countLimit < 1) {
     return null;
@@ -119,6 +123,10 @@ $(document).ready(function() {
     else if (selectedGameMode === "prime-pong") {
       gameResult = executePrimePong(countLimit);
       $("#game-output-header").text("-- Prime Pong Engaged --");
+    }
+    else if (selectedGameMode === "pong-ping") {
+      gameResult = executePongPing(countLimit);
+      $("#game-output-header").text("-- Engaged Pong Ping --");
     }
     else {
     $("#game-output-header").text("-- Please Select a Game Mode --");
