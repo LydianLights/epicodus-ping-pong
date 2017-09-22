@@ -10,6 +10,10 @@ body {
   color: #fefefe;
 }
 
+.page-body {
+  margin-bottom: 100px;
+}
+
 .page-header {
   text-align: center;
 }
@@ -46,6 +50,7 @@ body {
 }
 
 .btn-pong {
+  color: #fefefe;
   background-color: black;
   border: 2px solid #fefefe;
   border-radius: 6px;
@@ -60,4 +65,8 @@ body {
   border-top-left-radius: 0px;
   border-top-right-radius: 0px;
   border-top: none;
+}
+
+#game-output-header {
+  text-align: center;
 }

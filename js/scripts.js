@@ -26,9 +26,11 @@ function pingPong(countLimit) {
 // Builds output html to display to user using game results
 function buildGameOutput(list) {
   var output = "";
+  output += '<ul>';
   list.forEach(function(item) {
     output += '<li>' + item + '</li>';
   });
+  output += '</ul>';
   return output;
 }
 
@@ -54,21 +56,18 @@ $(document).ready(function() {
     }
   });
 
-
-
-
-
-
   // Main game execute
   $("#game-control form").submit(function(event) {
     event.preventDefault();
     var countLimit = $("#game-control input[name=count-limit]").val();
     var pingPongList = pingPong(countLimit);
 
-    $("#game-output ul").empty();
     if (pingPongList !== null) {
+      $("#game-output-numbers").empty();
+      $("#game-output-header").text("--Ping Pong Engaged--")
       var output = buildGameOutput(pingPongList);
-      $("#game-output ul").append(output);
+      $("#game-output-numbers").append(output);
+
       $("#game-output").show();
       $('html, body').animate({
         scrollTop: $("#game-control").offset().top
