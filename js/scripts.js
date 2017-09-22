@@ -92,6 +92,7 @@ function showGameRules(gameID) {
 function disableNumberEntry() {
   $("#game-control input[name=count-limit]").attr("disabled", "disabled");
   $("#game-control input[name=count-limit]").attr("placeholder", "Enter a number!");
+  $("#game-control input[name=count-limit]").val("");
   $("#game-control button[type=submit]").attr("disabled", "disabled");
 }
 
