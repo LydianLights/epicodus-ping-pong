@@ -12,6 +12,7 @@ _[TODO]_
 
 |                                                 Behavior | Test Input | Expected Output                                                                |
 |---------------------------------------------------------:|------------|--------------------------------------------------------------------------------|
+| It can take in user input and output something back      | "hello"    | "hello"                                                                        |
 | Only allows numbers to be entered                        | "asd3"     | exception                                                                      |
 | It can count up to the given number                      | 5          | [1, 2, 3, 4, 5]                                                                |
 | It can also replace all multiples of 3 with "ping"       | 5          | [1, 2, ping, 4, 5]                                                             |
