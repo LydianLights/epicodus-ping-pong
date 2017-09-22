@@ -28,7 +28,7 @@ _[TODO]_
 | It can count up to the given number                         | 5          | [1, 2, 3, 4, 5]                                                                                     |
 | It can identify all prime numbers in the list               | 7          | [2, 3, 5, 7]                                                                                        |
 | It can replace all prime numbers in the list with "prime"   | 5          | [1, prime, prime, 4, prime]                                                                         |
-| It can also replace every 3rd prime with "prime ping"       | 7          | [1, prime, prime, 4, prime ping]                                                                    |
+| It can also replace every 3rd prime with "prime ping"       | 5          | [1, prime, prime, 4, prime ping]                                                                    |
 | It can also replace every 5th prime with "prime pong"       | 17         | [1, prime, prime, 4, prime ping, 6, prime, 8, 9, 10, prime pong, 12, prime ping, 14, 15, 16, prime] |
 | It can also replace every 15th prime with "prime ping-pong" | 49         | [..., 40, prime, 42, prime, 44, 45, 46, prime ping-pong, 48, 49]                                    |
 
