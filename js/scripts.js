@@ -23,7 +23,15 @@ function executePingPong(countLimit) {
 }
 
 function executePrimePong(countLimit) {
-  return [0];
+  if (/[^\d]/.test(countLimit) || countLimit < 1) {
+    return null;
+  }
+  var output = [];
+  for (var i = 1; i <= countLimit; i++) {
+    output.push(i);
+  }
+
+  return output;
 }
 
 
