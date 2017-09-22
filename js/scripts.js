@@ -1,27 +1,39 @@
-// Generates Ping Pong game list up to given limit
+// Generates Ping Pong game list (as an array) up to given limit
 // Returns null if non-positive-integer is passed in
 function pingPong(countLimit) {
   if (/[^\d]/.test(countLimit) || countLimit < 1) {
     return null;
   }
-
-  return countLimit;
+  var output = [];
+  for (var i = 1; i <= countLimit; i++) {
+    output.push(i);
+  }
+  return output;
 }
 
 
 
 
-
-
+// Builds html list to show to user
+function buildDisplayList(list) {
+  var output = "";
+  list.forEach(function(item) {
+    output += '<li>' + item + '</li>';
+  });
+  console.log(output);
+  return output;
+}
 
 $(document).ready(function() {
   $("#game-settings form").submit(function(event) {
     event.preventDefault();
     var countLimit = $("#game-settings input[name=count-limit]").val();
-    var output = pingPong(countLimit);
+    var pingPongList = pingPong(countLimit);
 
-    if (output !== null) {
-      $("#game-output li").text(output);
+    $("#game-output ul").empty();
+    if (pingPongList !== null) {
+      var output = buildDisplayList(pingPongList);
+      $("#game-output ul").append(output);
       $("#game-output").show();
     }
     else {
