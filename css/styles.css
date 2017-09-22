@@ -59,6 +59,23 @@ body {
   background-color: #fefefe;
 }
 
+button:disabled {
+  color: #aaa;
+  background-color: #333;
+}
+
+button:disabled:hover {
+  cursor: default;
+  color: #aaa;
+  background-color: #333;
+}
+
+input[type="text"]:disabled {
+  cursor: text;
+  color: #aaa;
+  background-color: #222;
+}
+
 .game-description {
   margin-top: 0px;
   border-top-left-radius: 0px;
