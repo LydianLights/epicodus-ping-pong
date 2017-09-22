@@ -70,6 +70,9 @@ $(document).ready(function() {
       var output = buildGameOutput(pingPongList);
       $("#game-output ul").append(output);
       $("#game-output").show();
+      $('html, body').animate({
+        scrollTop: $("#game-control").offset().top
+      }, 500);
     }
     else {
       $("#game-output").hide();
