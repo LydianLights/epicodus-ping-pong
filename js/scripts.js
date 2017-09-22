@@ -40,12 +40,19 @@ function showGameRules(gameId) {
 
 $(document).ready(function() {
   // Game select buttons
+  var selectedGameMode = "";
   $(".game-buttons button[name=ping-pong]").click(function() {
-    showGameRules("#ping-pong-description");
-  })
+    if (selectedGameMode !== "ping-pong") {
+      selectedGameMode = "ping-pong";
+      showGameRules("#ping-pong-description");
+    }
+  });
   $(".game-buttons button[name=prime-pong]").click(function() {
-    showGameRules("#prime-pong-description");
-  })
+    if (selectedGameMode !== "prime-pong") {
+      selectedGameMode = "prime-pong";
+      showGameRules("#prime-pong-description");
+    }
+  });
 
 
 
