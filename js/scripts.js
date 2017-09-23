@@ -72,7 +72,6 @@ function executePrimePong(countLimit) {
       }
     }
   }
-
   return output;
 }
 
@@ -136,7 +135,7 @@ $(document).ready(function() {
     var countLimit = $("#game-control input[name=count-limit]").val();
     var gameResult = null;
 
-    // TODO: Refactor game execution checks to be cleaner
+    // TODO: Refactor game execution and error checks to maybe be cleaner
     $("#game-output-numbers").empty();
 
     if (selectedGameMode === "ping-pong") {
