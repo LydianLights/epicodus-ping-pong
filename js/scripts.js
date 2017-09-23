@@ -23,7 +23,11 @@ function executePingPong(countLimit) {
 }
 
 function executePongPing(countLimit) {
-  return executePingPong(countLimit).reverse();
+  var output = executePingPong(countLimit);
+  if (output === null) {
+    return output;
+  }
+  return output.reverse();
 }
 
 function executePrimePong(countLimit) {
@@ -132,6 +136,9 @@ $(document).ready(function() {
     var countLimit = $("#game-control input[name=count-limit]").val();
     var gameResult = null;
 
+    // TODO: Refactor game execution checks to be cleaner
+    $("#game-output-numbers").empty();
+
     if (selectedGameMode === "ping-pong") {
       gameResult = executePingPong(countLimit);
       $("#game-output-header").text("-- Ping Pong Engaged --");
@@ -144,21 +151,22 @@ $(document).ready(function() {
       gameResult = executePongPing(countLimit);
       $("#game-output-header").text("-- Engaged Pong Ping --");
     }
-    else {
-    $("#game-output-header").text("-- Please Select a Game Mode --");
-    }
 
-    if (gameResult !== null) {
-      $("#game-output-numbers").empty();
+    if (selectedGameMode === "") {
+      // Should never actually be seen
+      $("#game-output-header").text("-- Please Select a Game Mode --");
+    }
+    else if (gameResult === null) {
+      $("#game-output-header").text("-- Please Enter a Proper Number! --");
+    }
+    else if (gameResult !== null) {
       var htmlOutput = buildGameOutput(gameResult);
       $("#game-output-numbers").append(htmlOutput);
-      $("#game-output").show();
-      $('html, body').animate({
-        scrollTop: $("#game-control").offset().top
-      }, 500);
     }
-    else {
-      $("#game-output").hide();
-    }
+
+    $('html, body').animate({
+      scrollTop: $("#game-control").offset().top
+    }, 500);
+    $("#game-output").show();
   });
 });
