@@ -1,23 +1,27 @@
-// Generates Ping Pong game list (as an array) up to given limit
-// Returns null if non-positive-integer is passed in
+// Main game object used to track output to user
+function pingPongItem(value) {
+  this.value = value;
+  this.isPing = false;
+  this.isPong = false;
+  this.isPrime = false;
+}
+
+// Main game loops (see readme for specs on behavior)
+// Return array of pingPongItems, or null if non-positive-integer is passed in
 function executePingPong(countLimit) {
   if (/[^\d]/.test(countLimit) || countLimit < 1) {
     return null;
   }
   var output = [];
   for (var i = 1; i <= countLimit; i++) {
-    if (i % 3 === 0 && i % 5 === 0) {
-      output.push("ping-pong");
+    var outputItem = new pingPongItem(i);
+    if (i % 3 === 0) {
+      outputItem.isPing = true;
     }
-    else if (i % 3 === 0) {
-      output.push("ping");
+    if (i % 5 === 0) {
+      outputItem.isPong = true;
     }
-    else if (i % 5 === 0) {
-      output.push("pong");
-    }
-    else {
-      output.push(i);
-    }
+    output.push(outputItem);
   }
   return output;
 }
@@ -55,34 +59,65 @@ function executePrimePong(countLimit) {
 
   var primeCounter = 0;
   for (var i = 0; i < output.length; i++) {
-    if (output[i] === 0) {
-      output[i] = i + 1;
-    }
-    else {
-      output[i] = "prime";
+    var outputItem = new pingPongItem(i + 1);
+    if (output[i] !== 0) {
+      outputItem.isPrime = true;
       primeCounter++;
-      if (primeCounter % 3 === 0 && primeCounter % 5 === 0) {
-        output[i] += " ping-pong"
+      if (primeCounter % 3 === 0) {
+        outputItem.isPing = true;
       }
-      else if (primeCounter % 3 === 0) {
-        output[i] += " ping";
-      }
-      else if (primeCounter % 5 === 0) {
-        output[i] += " pong";
+      if (primeCounter % 5 === 0) {
+        outputItem.isPong = true;
       }
     }
+    output[i] = outputItem;
   }
   return output;
 }
-
 
 // Builds output html to display to user using game results
 function buildGameOutput(list) {
   var output = "";
   list.forEach(function(item) {
-    output += '<div class="output-item well"><p>' + item + '</p></div>';
+    output +=   '<div class="output-item well' + buildGameOutputHtmlClasses(item) + '"><p>' +
+                buildGameOutputText(item) +
+                '</p></div>';
   });
   return output;
+}
+
+function buildGameOutputHtmlClasses(pingPongItem) {
+  var classes = "";
+  if (pingPongItem.isPing) {
+    classes += " isPing";
+  }
+  if (pingPongItem.isPong) {
+    classes += " isPong";
+  }
+  if (pingPongItem.isPrime) {
+    classes += " isPrime";
+  }
+  return classes;
+}
+
+function buildGameOutputText(pingPongItem) {
+  var text = "";
+  if (pingPongItem.isPrime) {
+    text += "PRIME ";
+  }
+  if (pingPongItem.isPing && pingPongItem.isPong) {
+    text += "PING-PONG";
+  }
+  else if (pingPongItem.isPing) {
+    text += "PING";
+  }
+  else if (pingPongItem.isPong) {
+    text += "PONG";
+  }
+  if (text === "") {
+    text = pingPongItem.value;
+  }
+  return text;
 }
 
 // Shows the rules for the chosen game and hides all others
@@ -163,6 +198,7 @@ $(document).ready(function() {
       $("#game-output-numbers").append(htmlOutput);
     }
 
+    console.log(gameResult);
     $('html, body').animate({
       scrollTop: $("#game-control").offset().top
     }, 500);
