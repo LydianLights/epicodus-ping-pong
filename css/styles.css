@@ -112,3 +112,10 @@ input[type="text"]:disabled {
   left: 50%;
   transform: translate(-50%, -50%);
 }
+
+.isPing,
+.isPong,
+.isPrime {
+  color: black;
+  background-color: #fefefe;
+}

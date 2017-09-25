@@ -159,7 +159,6 @@ $(document).ready(function() {
       $("#game-output").slideUp(500);
     });
   }
-
   addGameModeButtonClickEvent("ping-pong");
   addGameModeButtonClickEvent("pong-ping");
   addGameModeButtonClickEvent("prime-pong");
@@ -170,9 +169,7 @@ $(document).ready(function() {
     var countLimit = $("#game-control input[name=count-limit]").val();
     var gameResult = null;
 
-    // TODO: Refactor game execution and error checks to maybe be cleaner
     $("#game-output-numbers").empty();
-
     if (selectedGameMode === "ping-pong") {
       gameResult = executePingPong(countLimit);
       $("#game-output-header").text("-- Ping Pong Engaged --");
